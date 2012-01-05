@@ -1,0 +1,2782 @@
+
+
+Started GET "/rails/info/properties" for 127.0.0.1 at 2011-12-08 11:41:03 +0530
+
+RuntimeError (Please install the mysql2 adapter: `gem install activerecord-mysql2-adapter` (no such file to load -- active_record/connection_adapters/mysql2_adapter)):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (47.8ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (53.2ms)
+
+
+Started GET "/rails/info/properties" for 127.0.0.1 at 2011-12-08 11:42:28 +0530
+
+Mysql2::Error (Unknown database 'omniauthApp_development'):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.9ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.1ms)
+  [1m[36mSQL (59.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (162.9ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (190.1ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateEvents (20111208063917)
+  [1m[35mSQL (144.1ms)[0m  CREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `start_at` datetime, `end_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (67.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20111208063917')[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `events`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `events`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateEvents (20111208063917)
+Migrating to CreateUsers (20111208064150)
+  [1m[35mSQL (234.8ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `provider` varchar(255), `uid` varchar(255), `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (50.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20111208064150')[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `events`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `events`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `users`
+
+
+Started GET "/events" for 127.0.0.1 at 2011-12-08 12:13:49 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (92.0ms)
+Completed   in 247ms
+
+ActionView::Template::Error (undefined local variable or method `current_user' for #<#<Class:0xa7a4d24>:0xa75b034>):
+    9: <body>
+    10: <div id="container">
+    11:       <div id="user_nav">
+    12:         <% if current_user %>
+    13:           Welcome <%= current_user.name %>!
+    14:           <%= link_to "Sign Out", signout_path %>
+    15:         <% else %>
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___919455013_87735680__243536557'
+  app/controllers/events_controller.rb:7:in `index'
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2011-12-08 12:14:42 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (9.2ms)
+Completed   in 59ms
+
+ActionView::Template::Error (undefined method `show_title?' for #<#<Class:0xb599d6c>:0xb5989d0>):
+    19:       <% flash.each do |name, msg| %>
+    20:         <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    21:       <% end %>
+    22:       <%= content_tag :h1, yield(:title) if show_title? %>
+    23:       <%= yield %>
+    24: </div>
+    25: </body>
+  app/views/layouts/application.html.erb:22:in `_app_views_layouts_application_html_erb___919455013_95205290__243536557'
+  app/controllers/events_controller.rb:7:in `index'
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2011-12-08 12:14:58 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 16ms (Views: 7.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2011-12-08 12:23:41 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 127ms (Views: 6.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-12-08 12:23:46 +0530
+
+OAuth::Unauthorized (401 Unauthorized):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2011-12-08 12:31:07 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 129ms (Views: 6.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-12-08 12:31:11 +0530
+
+OAuth::Unauthorized (401 Unauthorized):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2011-12-08 12:32:01 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 129ms (Views: 7.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-12-08 12:32:05 +0530
+
+OAuth::Unauthorized (401 Unauthorized):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2011-12-08 12:36:12 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 14ms (Views: 6.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-12-08 12:36:14 +0530
+
+OAuth::Unauthorized (401 Unauthorized):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (40.4ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (46.6ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-12-08 12:47:28 +0530
+
+OAuth::Unauthorized (401 Unauthorized):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.7ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2011-12-08 12:47:43 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 116ms (Views: 6.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-12-08 12:47:45 +0530
+
+OAuth::Unauthorized (401 Unauthorized):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2011-12-08 12:51:23 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 52ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 192.168.1.9 at 2011-12-08 12:51:35 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 14ms (Views: 6.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/twitter" for 192.168.1.9 at 2011-12-08 12:51:37 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=VRDJ6oRs3iXHAZfVUEbJ8AYa6Ny51BhJxjHTQWwQ6Y&oauth_verifier=TVBWUZ98UUXlOhIabIyBxSvvgJ4QDUgJTI54YyLoDMU" for 192.168.1.9 at 2011-12-08 12:52:13 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"VRDJ6oRs3iXHAZfVUEbJ8AYa6Ny51BhJxjHTQWwQ6Y", "oauth_verifier"=>"TVBWUZ98UUXlOhIabIyBxSvvgJ4QDUgJTI54YyLoDMU", "provider"=>"twitter"}
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mUser Load (83.8ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '320841060' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `users`[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `users` (`provider`, `uid`, `name`, `created_at`, `updated_at`) VALUES ('twitter', '320841060', 'Rajeswari', '2011-12-08 07:22:16', '2011-12-08 07:22:16')
+  [1m[36mSQL (56.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 353ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 12:52:41 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 34ms (Views: 25.4ms | ActiveRecord: 142.7ms)
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 12:57:54 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (59.2ms)
+Completed 200 OK in 72ms (Views: 63.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signout" for 192.168.1.9 at 2011-12-08 12:58:05 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 12:58:05 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 15ms (Views: 6.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/twitter" for 192.168.1.9 at 2011-12-08 12:58:07 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=hj6iRkEDxCSR6JbEemMzfuCy2A27WQS9GE7OkF1qr8&oauth_verifier=CzOtsN07CDBrfFbzb5WfivDTfljEOsZ6oQD03kkXkXo" for 192.168.1.9 at 2011-12-08 12:58:09 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"hj6iRkEDxCSR6JbEemMzfuCy2A27WQS9GE7OkF1qr8", "oauth_verifier"=>"CzOtsN07CDBrfFbzb5WfivDTfljEOsZ6oQD03kkXkXo", "provider"=>"twitter"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '320841060' LIMIT 1[0m
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 17ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 12:58:11 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 31ms (Views: 23.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/signout" for 192.168.1.9 at 2011-12-08 13:01:55 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:01:55 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 15ms (Views: 6.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/twitter" for 192.168.1.9 at 2011-12-08 13:01:57 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=7TVzru7c22zwuR6A4p9rfQWOknjTI4dSrutSWOUQ&oauth_verifier=iStlEazffnUfPGEpwvaLaTp77MvULzzPFSIipy4f0" for 192.168.1.9 at 2011-12-08 13:01:59 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"7TVzru7c22zwuR6A4p9rfQWOknjTI4dSrutSWOUQ", "oauth_verifier"=>"iStlEazffnUfPGEpwvaLaTp77MvULzzPFSIipy4f0", "provider"=>"twitter"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '320841060' LIMIT 1[0m
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 17ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:02:01 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 34ms (Views: 24.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/signout" for 192.168.1.9 at 2011-12-08 13:03:08 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:03:08 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 16ms (Views: 7.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/twitter" for 192.168.1.9 at 2011-12-08 13:03:19 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=O0lImKRaXKAA8uv3GD1tLcv5t7fd7bDqsrIT1gr9I&oauth_verifier=7x6CqPxa3M7BlFUltfEsZvIppvKCaPLbn2xC2X4AMw" for 192.168.1.9 at 2011-12-08 13:03:21 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"O0lImKRaXKAA8uv3GD1tLcv5t7fd7bDqsrIT1gr9I", "oauth_verifier"=>"7x6CqPxa3M7BlFUltfEsZvIppvKCaPLbn2xC2X4AMw", "provider"=>"twitter"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '320841060' LIMIT 1[0m
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 17ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:03:26 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 85ms (Views: 24.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/signout" for 192.168.1.9 at 2011-12-08 13:03:52 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:03:52 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 14ms (Views: 6.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/twitter" for 192.168.1.9 at 2011-12-08 13:04:00 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=lZHJhPeJQ91dtlzkvxdFO3qKKDXQPEmV0n8CCrotSQ&oauth_verifier=NFlS6x1d1l2Bwz5fBZc7VaiF8iF0UdAjFFa6rIbpQ" for 192.168.1.9 at 2011-12-08 13:04:02 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"lZHJhPeJQ91dtlzkvxdFO3qKKDXQPEmV0n8CCrotSQ", "oauth_verifier"=>"NFlS6x1d1l2Bwz5fBZc7VaiF8iF0UdAjFFa6rIbpQ", "provider"=>"twitter"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '320841060' LIMIT 1[0m
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 17ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:04:04 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (67.3ms)
+Completed 200 OK in 80ms (Views: 71.2ms | ActiveRecord: 0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` LIMIT 1[0m
+
+
+Started GET "/signout" for 192.168.1.9 at 2011-12-08 13:06:16 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:06:16 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 14ms (Views: 6.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/twitter" for 192.168.1.9 at 2011-12-08 13:06:24 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=S97W3zbC6HNll270Nyzmjf1m1VM7uH5uAWhh6uvFc&oauth_verifier=4HtSDx1RiFlWQEox8w1f8X8lDOUYl7W4VsTYXXjJuk" for 192.168.1.9 at 2011-12-08 13:06:26 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"S97W3zbC6HNll270Nyzmjf1m1VM7uH5uAWhh6uvFc", "oauth_verifier"=>"4HtSDx1RiFlWQEox8w1f8X8lDOUYl7W4VsTYXXjJuk", "provider"=>"twitter"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '320841060' LIMIT 1[0m
+Completed   in 22ms
+
+NameError (undefined local variable or method `user_id' for #<SessionsController:0xb8189f8>):
+  app/controllers/sessions_controller.rb:8:in `create'
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.0ms)
+
+
+Started GET "/auth/twitter/callback?oauth_token=S97W3zbC6HNll270Nyzmjf1m1VM7uH5uAWhh6uvFc&oauth_verifier=4HtSDx1RiFlWQEox8w1f8X8lDOUYl7W4VsTYXXjJuk" for 192.168.1.9 at 2011-12-08 13:06:55 +0530
+
+
+Started GET "/auth/failure?message=invalid_credentials" for 192.168.1.9 at 2011-12-08 13:06:56 +0530
+
+ActionController::RoutingError (No route matches "/auth/failure"):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:07:00 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 15ms (Views: 7.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/auth/twitter" for 192.168.1.9 at 2011-12-08 13:07:02 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=tATv3XPRqKI5nf4KAdGIIMWidwQ3BQEnkwmTeihYR0&oauth_verifier=7WNAf5jrSrUYlXgu9icgDPvVt3sMjmq9GCrr3nE56o" for 192.168.1.9 at 2011-12-08 13:07:04 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"tATv3XPRqKI5nf4KAdGIIMWidwQ3BQEnkwmTeihYR0", "oauth_verifier"=>"7WNAf5jrSrUYlXgu9icgDPvVt3sMjmq9GCrr3nE56o", "provider"=>"twitter"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '320841060' LIMIT 1[0m
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 17ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:07:06 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 30ms (Views: 21.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signout" for 192.168.1.9 at 2011-12-08 13:09:33 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:09:33 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 16ms (Views: 7.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/auth/twitter" for 192.168.1.9 at 2011-12-08 13:09:34 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=JOUONRopqbD6MeycYimJEURbhJ2kWbEqLBXsg5UPac&oauth_verifier=CXksZa6LyZOXBkWTu4f3Y4SO0lduA2fg0e5eqAnM6rI" for 192.168.1.9 at 2011-12-08 13:09:36 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"JOUONRopqbD6MeycYimJEURbhJ2kWbEqLBXsg5UPac", "oauth_verifier"=>"CXksZa6LyZOXBkWTu4f3Y4SO0lduA2fg0e5eqAnM6rI", "provider"=>"twitter"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '320841060' LIMIT 1[0m
+Completed   in 22ms
+
+NameError (undefined local variable or method `omniauth' for #<SessionsController:0xb126ab4>):
+  app/controllers/sessions_controller.rb:7:in `create'
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.6ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.7ms)
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:09:49 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 15ms (Views: 7.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/auth/twitter" for 192.168.1.9 at 2011-12-08 13:09:51 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=ESjdR1pP8PaKfpNWNfXi2IIqyeZzElLoW4dA0nxgz8c&oauth_verifier=iqSx7Wfw1XFKCLojnCF17RC8Rds9ltu4cAz9dpZWZw" for 192.168.1.9 at 2011-12-08 13:09:52 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"ESjdR1pP8PaKfpNWNfXi2IIqyeZzElLoW4dA0nxgz8c", "oauth_verifier"=>"iqSx7Wfw1XFKCLojnCF17RC8Rds9ltu4cAz9dpZWZw", "provider"=>"twitter"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '320841060' LIMIT 1[0m
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 20ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:09:55 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 39ms (Views: 28.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:27:46 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 31ms (Views: 22.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:27:48 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (59.9ms)
+Completed 200 OK in 72ms (Views: 63.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:28:07 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 32ms (Views: 24.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:28:21 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (59.6ms)
+Completed 200 OK in 71ms (Views: 63.7ms | ActiveRecord: 0.3ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateEvents (20111208063917)
+Migrating to CreateUsers (20111208064150)
+Migrating to AddTokenAndSecretToUsers (20111208081430)
+  [1m[35mSQL (256.0ms)[0m  ALTER TABLE `users` ADD `token` varchar(255)
+  [1m[36mSQL (313.1ms)[0m  [1mALTER TABLE `users` ADD `secret` varchar(255)[0m
+  [1m[35mSQL (51.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20111208081430')
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  describe `events`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `events`[0m
+  [1m[35mSQL (0.4ms)[0m  describe `users`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` LIMIT 1
+
+
+Started GET "/signout" for 192.168.1.9 at 2011-12-08 13:47:25 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:47:26 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 112ms (Views: 6.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/twitter" for 192.168.1.9 at 2011-12-08 13:47:28 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=32Q9UCuszQd9PMidb98PBcc2B1BkoZR2Swf8pmzYE&oauth_verifier=TrjCyG336eN4AqxP5fMYIqe9jRtegOe83EyinMlUfRY" for 192.168.1.9 at 2011-12-08 13:47:30 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"32Q9UCuszQd9PMidb98PBcc2B1BkoZR2Swf8pmzYE", "oauth_verifier"=>"TrjCyG336eN4AqxP5fMYIqe9jRtegOe83EyinMlUfRY", "provider"=>"twitter"}
+Completed   in 10ms
+
+SyntaxError (/home/rajeswari/projects/omniauthApp/app/models/user.rb:8: syntax error, unexpected tASSOC, expecting keyword_end
+      user.secret => auth["credentials"]["secret"]
+                    ^):
+  app/controllers/sessions_controller.rb:4:in `create'
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.7ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.1ms)
+
+
+Started GET "/auth/twitter/callback?oauth_token=32Q9UCuszQd9PMidb98PBcc2B1BkoZR2Swf8pmzYE&oauth_verifier=TrjCyG336eN4AqxP5fMYIqe9jRtegOe83EyinMlUfRY" for 192.168.1.9 at 2011-12-08 13:47:45 +0530
+
+
+Started GET "/auth/failure?message=invalid_credentials" for 192.168.1.9 at 2011-12-08 13:47:46 +0530
+
+ActionController::RoutingError (No route matches "/auth/failure"):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:47:51 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 15ms (Views: 7.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/twitter" for 192.168.1.9 at 2011-12-08 13:47:52 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=Jh61MiIlOF5dgalLbmZ4ovL0Xh50dgWLy8NDRu34n8&oauth_verifier=vfWs5CIk2eRNPlZAN76qzcfqTroh6MuhD2pXs6vntxc" for 192.168.1.9 at 2011-12-08 13:47:54 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"Jh61MiIlOF5dgalLbmZ4ovL0Xh50dgWLy8NDRu34n8", "oauth_verifier"=>"vfWs5CIk2eRNPlZAN76qzcfqTroh6MuhD2pXs6vntxc", "provider"=>"twitter"}
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '320841060' LIMIT 1
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 60ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:47:56 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered events/index.html.erb within layouts/application (55.4ms)
+Completed 200 OK in 67ms (Views: 59.4ms | ActiveRecord: 1.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` LIMIT 1[0m
+
+
+Started GET "/signout" for 192.168.1.9 at 2011-12-08 13:48:48 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:48:48 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 14ms (Views: 6.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:48:52 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 16ms (Views: 6.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/twitter" for 192.168.1.9 at 2011-12-08 13:48:53 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=zK3suosqxFci6wlT5GOSvmHCzUMimIjrvooAtXL8O4&oauth_verifier=5pNWTrud6E5a0TyKoQnpigB6KZwUIcb8xeQ17Uz8" for 192.168.1.9 at 2011-12-08 13:48:55 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"zK3suosqxFci6wlT5GOSvmHCzUMimIjrvooAtXL8O4", "oauth_verifier"=>"5pNWTrud6E5a0TyKoQnpigB6KZwUIcb8xeQ17Uz8", "provider"=>"twitter"}
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+Completed   in 10ms
+
+
+Started GET "/auth/failure?message=invalid_response" for 192.168.1.9 at 2011-12-08 13:48:57 +0530
+
+ActionController::RoutingError (No route matches "/auth/failure"):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:49:05 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 16ms (Views: 7.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth/twitter" for 192.168.1.9 at 2011-12-08 13:49:06 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=zOAJ2vviwY3ivifwrAiF4PizYc8P4B1OjcnmvldaWQA&oauth_verifier=0TcQ4BdzPAGwywxgbx1iZVb1RHi88EaxH1mzujIJh0" for 192.168.1.9 at 2011-12-08 13:49:07 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"zOAJ2vviwY3ivifwrAiF4PizYc8P4B1OjcnmvldaWQA", "oauth_verifier"=>"0TcQ4BdzPAGwywxgbx1iZVb1RHi88EaxH1mzujIJh0", "provider"=>"twitter"}
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+Completed   in 9ms
+
+
+Started GET "/auth/failure?message=invalid_response" for 192.168.1.9 at 2011-12-08 13:49:10 +0530
+
+ActionController::RoutingError (No route matches "/auth/failure"):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:49:53 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (51.6ms)
+Completed 200 OK in 63ms (Views: 55.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/twitter" for 192.168.1.9 at 2011-12-08 13:49:55 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=qFsgyXoZ6sp8mvzEu6gw4YdLnEFQb9la1MgQuz9v51o&oauth_verifier=iYNaqFtDfs75Fyvqz342cadvoXCSjvqarNJ2yOHydI" for 192.168.1.9 at 2011-12-08 13:49:57 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"qFsgyXoZ6sp8mvzEu6gw4YdLnEFQb9la1MgQuz9v51o", "oauth_verifier"=>"iYNaqFtDfs75Fyvqz342cadvoXCSjvqarNJ2yOHydI", "provider"=>"twitter"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '320841060' AND `users`.`token` IS NULL AND `users`.`secret` IS NULL LIMIT 1[0m
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 18ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:49:59 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 35ms (Views: 27.6ms | ActiveRecord: 0.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (112.0ms)[0m  CREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `start_at` datetime, `end_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (77.2ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `provider` varchar(255), `uid` varchar(255), `name` varchar(255), `created_at` datetime, `updated_at` datetime, `token` varchar(255), `secret` varchar(255)) ENGINE=InnoDB
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (77.9ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (223.8ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36mSQL (42.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20111208081430')[0m
+  [1m[35mSQL (44.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111208063917')
+  [1m[36mSQL (44.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20111208064150')[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+
+
+Started GET "/signout" for 192.168.1.9 at 2011-12-08 13:50:36 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 2ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:50:36 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 15ms (Views: 6.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/auth/twitter" for 192.168.1.9 at 2011-12-08 13:50:38 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=E7t8oTwMfnUVopd5NfuQRNi94AqjQhxqK2HWgyuOk&oauth_verifier=5bG6nN3XmDdGFBiIszEjTtFKJF7hZ1lNaNCYMl3AE" for 192.168.1.9 at 2011-12-08 13:50:40 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"E7t8oTwMfnUVopd5NfuQRNi94AqjQhxqK2HWgyuOk", "oauth_verifier"=>"5bG6nN3XmDdGFBiIszEjTtFKJF7hZ1lNaNCYMl3AE", "provider"=>"twitter"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '320841060' AND `users`.`token` IS NULL AND `users`.`secret` IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `users`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `users` (`provider`, `uid`, `name`, `created_at`, `updated_at`, `token`, `secret`) VALUES ('twitter', '320841060', 'Rajeswari', '2011-12-08 08:20:43', '2011-12-08 08:20:43', '320841060-66D1qhr9gDGByEWV9abdPop9U9bfpVzPscFTUx0', 'Vsiz8oiFzppW8CbQojpDGcVwlYi0ps3oALL9AWIvZvQ')
+  [1m[36mSQL (56.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 99ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:50:43 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (67.2ms)
+Completed 200 OK in 79ms (Views: 70.0ms | ActiveRecord: 58.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` LIMIT 1[0m
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:56:07 +0530
+
+SyntaxError (/home/rajeswari/projects/omniauthApp/app/controllers/events_controller.rb:87: syntax error, unexpected tLBRACE, expecting ')'
+                { :site => "http://api.twitter.com"
+                 ^
+/home/rajeswari/projects/omniauthApp/app/controllers/events_controller.rb:88: syntax error, unexpected ')', expecting keyword_end):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.3ms)
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:57:26 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 35ms (Views: 26.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signout" for 192.168.1.9 at 2011-12-08 13:57:28 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:57:28 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 19ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/twitter" for 192.168.1.9 at 2011-12-08 13:57:30 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=wDIAstt1NH9BfrYXUi9TH9IHEAuJqKv5LnZ3orvVvjs&oauth_verifier=QTmM9BRptAmn3kV8PuiCpsCzozidHIbmcNipQWSNOSU" for 192.168.1.9 at 2011-12-08 13:57:32 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"wDIAstt1NH9BfrYXUi9TH9IHEAuJqKv5LnZ3orvVvjs", "oauth_verifier"=>"QTmM9BRptAmn3kV8PuiCpsCzozidHIbmcNipQWSNOSU", "provider"=>"twitter"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '320841060' AND `users`.`token` IS NULL AND `users`.`secret` IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `users` (`provider`, `uid`, `name`, `created_at`, `updated_at`, `token`, `secret`) VALUES ('twitter', '320841060', 'Rajeswari', '2011-12-08 08:27:35', '2011-12-08 08:27:35', '320841060-66D1qhr9gDGByEWV9abdPop9U9bfpVzPscFTUx0', 'Vsiz8oiFzppW8CbQojpDGcVwlYi0ps3oALL9AWIvZvQ')
+  [1m[36mSQL (47.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 68ms
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 13:57:35 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 46ms (Views: 38.4ms | ActiveRecord: 49.4ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateEvents (20111208063917)
+Migrating to CreateUsers (20111208064150)
+Migrating to AddTokenAndSecretToUsers (20111208081430)
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `events`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `events`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateEvents (20111208063917)
+Migrating to CreateUsers (20111208064150)
+Migrating to AddTokenAndSecretToUsers (20111208081430)
+Migrating to AddUserIdToEvents (20111208083015)
+  [1m[35mSQL (269.1ms)[0m  ALTER TABLE `events` ADD `user_id` int(11)
+  [1m[36mSQL (41.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20111208083015')[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `events`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `events`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `users`
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 14:05:37 +0530
+
+SyntaxError (/home/rajeswari/projects/omniauthApp/app/controllers/events_controller.rb:86: syntax error, unexpected keyword_def, expecting ')'
+    def prepare_access_token(oauth_token, oauth_token_secret)
+       ^):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.3ms)
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 14:06:08 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (32.9ms)
+Completed   in 200ms
+
+ActionView::Template::Error (No route matches {:controller=>"events", :action=>"recent_tweets"}):
+    25: 
+    26: <br />
+    27: 
+    28: <%= link_to 'New Event', new_event_path %> | <%= link_to 'Tweets', tweets_path %>
+  app/views/events/index.html.erb:28:in `_app_views_events_index_html_erb__255213425__619464528_1016396014'
+  app/controllers/events_controller.rb:7:in `index'
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.9ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.3ms)
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 14:07:35 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered events/index.html.erb within layouts/application (43.3ms)
+Completed 200 OK in 57ms (Views: 47.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 192.168.1.9 at 2011-12-08 14:07:47 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered events/index.html.erb within layouts/application (61.2ms)
+Completed 200 OK in 75ms (Views: 65.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recent_tweets" for 192.168.1.9 at 2011-12-08 14:07:49 +0530
+  Processing by EventsController#recent_tweets as HTML
+Completed   in 10ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/controllers/events_controller.rb:85:in `recent_tweets'
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.5ms)
+
+
+Started GET "/recent_tweets" for 192.168.1.9 at 2011-12-08 14:08:18 +0530
+  Processing by EventsController#recent_tweets as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Completed   in 20ms
+
+NoMethodError (undefined method `find' for #<User:0xb811ef0>):
+  app/controllers/events_controller.rb:97:in `recent_tweets'
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.4ms)
+
+
+Started GET "/recent_tweets" for 192.168.1.9 at 2011-12-08 14:10:01 +0530
+  Processing by EventsController#recent_tweets as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` LIMIT 1
+Completed 200 OK in 2663ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 15:13:36 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 142ms (Views: 7.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-08 15:13:40 +0530
+
+ActionController::RoutingError (No route matches "/auth/google"):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-08 15:15:24 +0530
+
+ActionController::RoutingError (No route matches "/auth/google"):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 15:15:51 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 151ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recent_tweets" for 127.0.0.1 at 2011-12-08 15:15:52 +0530
+  Processing by EventsController#recent_tweets as HTML
+  [1m[35mUser Load (1.3ms)[0m  SELECT `users`.* FROM `users` LIMIT 1
+Completed   in 1360ms
+
+ActionView::MissingTemplate (Missing template events/recent_tweets with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/home/rajeswari/projects/omniauthApp/app/views"):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.9ms)
+
+
+Started GET "/auth/oauth2" for 127.0.0.1 at 2011-12-08 15:15:59 +0530
+
+ActionController::RoutingError (No route matches "/auth/oauth2"):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 15:25:19 +0530
+
+ArgumentError (Received wrong number of arguments. [nil]):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (14.5ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 15:26:14 +0530
+
+ArgumentError (Received wrong number of arguments. ["842742982073.apps.googleusercontent.com"]):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.0ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 16:05:52 +0530
+
+ArgumentError (Received wrong number of arguments. ["842742982073.apps.googleusercontent.com"]):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (33.8ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (40.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 16:06:06 +0530
+
+ArgumentError (Received wrong number of arguments. ["U57jOGEgNWIHNRavDwskqLMB"]):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.4ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 16:24:30 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 180ms (Views: 7.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-08 16:24:34 +0530
+
+OAuth::Unauthorized (400 Bad Request):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.1ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-08 16:27:39 +0530
+
+OAuth::Unauthorized (400 Bad Request):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (42.1ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (47.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 16:37:41 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 180ms (Views: 6.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-08 16:37:44 +0530
+
+
+Started GET "/auth/google/callback?oauth_verifier=2z1R_g6xflVbkfir8SLVSA_R&oauth_token=4%2FciW7X-kdBJEm-JQM5d-hbBAy4SHj" for 127.0.0.1 at 2011-12-08 16:37:55 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_verifier"=>"2z1R_g6xflVbkfir8SLVSA_R", "oauth_token"=>"4/ciW7X-kdBJEm-JQM5d-hbBAy4SHj", "provider"=>"google"}
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'google' AND `users`.`uid` = 'krajeswarimca@gmail.com' AND `users`.`token` IS NULL AND `users`.`secret` IS NULL LIMIT 1[0m
+Completed   in 99ms
+
+
+Started GET "/auth/failure?message=invalid_response" for 127.0.0.1 at 2011-12-08 16:37:57 +0530
+
+ActionController::RoutingError (No route matches "/auth/failure"):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 16:38:53 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 17ms (Views: 6.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-08 16:38:55 +0530
+
+
+Started GET "/auth/google/callback?oauth_verifier=5G2lYEYAKWFyvZSP7sqwUNWi&oauth_token=4%2F08tdO5a7Vu8cU33S2UWkrNPb6fEX" for 127.0.0.1 at 2011-12-08 16:39:01 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_verifier"=>"5G2lYEYAKWFyvZSP7sqwUNWi", "oauth_token"=>"4/08tdO5a7Vu8cU33S2UWkrNPb6fEX", "provider"=>"google"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'google' AND `users`.`uid` = 'rajeswarik@spritle.com' AND `users`.`token` IS NULL AND `users`.`secret` IS NULL LIMIT 1[0m
+Completed   in 22ms
+
+
+Started GET "/auth/failure?message=invalid_response" for 127.0.0.1 at 2011-12-08 16:39:02 +0530
+
+ActionController::RoutingError (No route matches "/auth/failure"):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 16:48:41 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 181ms (Views: 7.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-08 16:48:50 +0530
+
+
+Started GET "/auth/google/callback?oauth_verifier=RFxjwZxpAtr_DcsJSKaWOjaY&oauth_token=4%2FrldFEkHrCNWPwI9cGrG4QZeBYIF4" for 127.0.0.1 at 2011-12-08 16:49:06 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_verifier"=>"RFxjwZxpAtr_DcsJSKaWOjaY", "oauth_token"=>"4/rldFEkHrCNWPwI9cGrG4QZeBYIF4", "provider"=>"google"}
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'google' AND `users`.`uid` = 'rajeswarik@spritle.com' AND `users`.`token` IS NULL AND `users`.`secret` IS NULL LIMIT 1[0m
+Completed   in 98ms
+
+
+Started GET "/auth/failure?message=invalid_response" for 127.0.0.1 at 2011-12-08 16:49:08 +0530
+
+ActionController::RoutingError (No route matches "/auth/failure"):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 16:49:28 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 24ms (Views: 7.9ms | ActiveRecord: 0.8ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateEvents (20111208063917)
+Migrating to AddTokenAndSecretToUsers (20111208081430)
+Migrating to AddUserIdToEvents (20111208083015)
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `events`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `events`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateEvents (20111208063917)
+Migrating to AddUserIdToEvents (20111208083015)
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `events`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `events`
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateEvents (20111208063917)
+Migrating to AddUserIdToEvents (20111208083015)
+Migrating to CreateAuthentications (20111208112903)
+  [1m[35mSQL (117.6ms)[0m  CREATE TABLE `authentications` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (39.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20111208112903')[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mdescribe `authentications`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `authentications`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `events`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `events`
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateEvents (20111208063917)
+Migrating to AddUserIdToEvents (20111208083015)
+Migrating to CreateAuthentications (20111208112903)
+Migrating to AddUserIdAndProviderAndUidAndTokenAndSecretToAuthentication (20111208113220)
+  [1m[35mSQL (241.6ms)[0m  ALTER TABLE `authentications` ADD `user_id` varchar(255)
+  [1m[36mSQL (279.7ms)[0m  [1mALTER TABLE `authentications` ADD `provider` varchar(255)[0m
+  [1m[35mSQL (301.8ms)[0m  ALTER TABLE `authentications` ADD `uid` varchar(255)
+  [1m[36mSQL (268.6ms)[0m  [1mALTER TABLE `authentications` ADD `token` varchar(255)[0m
+  [1m[35mSQL (225.6ms)[0m  ALTER TABLE `authentications` ADD `secret` varchar(255)
+  [1m[36mSQL (48.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20111208113220')[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `authentications`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `authentications`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `events`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `events`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateEvents (20111208063917)
+Migrating to AddUserIdToEvents (20111208083015)
+Migrating to CreateAuthentications (20111208112903)
+Migrating to AddUserIdAndProviderAndUidAndTokenAndSecretToAuthentication (20111208113220)
+Migrating to CreateUsers (20111208113307)
+  [1m[35mSQL (0.3ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+Mysql2::Error: Table 'users' already exists: CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 17:11:16 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 182ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-08 17:11:22 +0530
+
+
+Started GET "/auth/google/callback?oauth_verifier=7-LdT1HP2LqXsf-qOcZtqy3x&oauth_token=4%2FBCLiQy9UNooVqSpLOEsLcHTVmext" for 127.0.0.1 at 2011-12-08 17:11:27 +0530
+
+ActionController::RoutingError (uninitialized constant AuthenticationsController):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateEvents (20111208063917)
+Migrating to AddUserIdToEvents (20111208083015)
+Migrating to CreateAuthentications (20111208112903)
+Migrating to AddUserIdAndProviderAndUidAndTokenAndSecretToAuthentication (20111208113220)
+Migrating to CreateUsers (20111208113307)
+  [1m[35mSQL (0.3ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+Mysql2::Error: Table 'users' already exists: CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateEvents (20111208063917)
+Migrating to AddUserIdToEvents (20111208083015)
+Migrating to CreateAuthentications (20111208112903)
+Migrating to AddUserIdAndProviderAndUidAndTokenAndSecretToAuthentication (20111208113220)
+Migrating to CreateUsers (20111208113307)
+  [1m[35mSQL (136.1ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (73.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20111208113307')[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `authentications`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `authentications`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `events`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `events`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `users`
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 17:13:27 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 185ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-08 17:13:31 +0530
+
+
+Started GET "/auth/google/callback?oauth_verifier=12TRJ_CFm3cKDLQzVqa-H4Sf&oauth_token=4%2FGFkJK8nECJZstI7Klw1ofIxmRUDI" for 127.0.0.1 at 2011-12-08 17:13:34 +0530
+
+ActionController::RoutingError (uninitialized constant AuthenticationsController):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 17:14:24 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 16ms (Views: 6.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-08 17:14:26 +0530
+
+
+Started GET "/auth/google/callback?oauth_verifier=l4coQo6I27FVoUX_3RcNW8s2&oauth_token=4%2F8Ys1KdNYE62LWWQt9OSPyBLaAY-S" for 127.0.0.1 at 2011-12-08 17:14:29 +0530
+
+ActionController::RoutingError (uninitialized constant AuthenticationsController):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/auth/google/callback?oauth_verifier=7-LdT1HP2LqXsf-qOcZtqy3x&oauth_token=4%2FBCLiQy9UNooVqSpLOEsLcHTVmext" for 127.0.0.1 at 2011-12-08 17:15:02 +0530
+
+
+Started GET "/auth/failure?message=invalid_credentials" for 127.0.0.1 at 2011-12-08 17:15:02 +0530
+
+ActionController::RoutingError (No route matches "/auth/failure"):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 17:15:05 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 16ms (Views: 6.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-08 17:15:07 +0530
+
+
+Started GET "/auth/google/callback?oauth_verifier=DVdDiaGADy0o1cIsMG_J0ZRD&oauth_token=4%2FLRO8j-OJOc4dsgi_GXMCfav_3CxW" for 127.0.0.1 at 2011-12-08 17:15:10 +0530
+
+ActionController::RoutingError (uninitialized constant AuthenticationsController):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 17:18:01 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 17ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-08 17:18:02 +0530
+
+
+Started GET "/auth/google/callback?oauth_verifier=0ycHgG_bKOWLk1JlO5jxyWPm&oauth_token=4%2FdNG2mrO2v3sJH8oNkMdTyL0uA800" for 127.0.0.1 at 2011-12-08 17:18:05 +0530
+
+ActionController::RoutingError (uninitialized constant AuthenticationsController):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 17:19:56 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 197ms (Views: 7.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-08 17:19:59 +0530
+
+
+Started GET "/auth/google/callback?oauth_verifier=CmERjrvuBPa7rDUKOQUHqZcL&oauth_token=4%2Fmfx8PbhbfwFBpnTlJHjtbbOVuWap" for 127.0.0.1 at 2011-12-08 17:20:02 +0530
+
+ActionController::RoutingError (uninitialized constant AuthenticationsController):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 17:20:37 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 184ms (Views: 7.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-08 17:20:41 +0530
+
+
+Started GET "/auth/google/callback?oauth_verifier=OBf5L5kQquNmd1X146D46kT0&oauth_token=4%2FeGlbYI__WsBCaiVvvlf0YfWARkE5" for 127.0.0.1 at 2011-12-08 17:20:44 +0530
+
+ActionController::RoutingError (uninitialized constant AuthenticationsController):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 17:21:48 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 17ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 17:21:49 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 15ms (Views: 6.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-08 17:21:51 +0530
+
+
+Started GET "/auth/google/callback?oauth_verifier=Ahzz5nCWZaiGTf1KbQgwj9oJ&oauth_token=4%2FB2XoC0gYgbTbfuPemsaAk0n5_Kxk" for 127.0.0.1 at 2011-12-08 17:21:54 +0530
+
+ActionController::RoutingError (uninitialized constant AuthenticationsController):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 17:21:59 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 16ms (Views: 7.0ms | ActiveRecord: 0.2ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateEvents (20111208063917)
+Migrating to AddUserIdToEvents (20111208083015)
+Migrating to CreateAuthentications (20111208112903)
+Migrating to AddUserIdAndProviderAndUidAndTokenAndSecretToAuthentication (20111208113220)
+Migrating to CreateUsers (20111208113307)
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `authentications`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `authentications`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `events`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `events`
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` LIMIT 1[0m
+Mysql2::Error: Table 'omniauthApp_development.users' doesn't exist: SELECT  `users`.* FROM `users` LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateEvents (20111208063917)
+Migrating to AddUserIdToEvents (20111208083015)
+Migrating to CreateAuthentications (20111208112903)
+Migrating to AddUserIdAndProviderAndUidAndTokenAndSecretToAuthentication (20111208113220)
+Migrating to CreateUsers (20111208113307)
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `authentications`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `authentications`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `events`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `events`
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` LIMIT 1
+Mysql2::Error: Table 'omniauthApp_development.users' doesn't exist: SELECT  `users`.* FROM `users` LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` LIMIT 1[0m
+Mysql2::Error: Table 'omniauthApp_development.users' doesn't exist: SELECT  `users`.* FROM `users` LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateEvents (20111208063917)
+Migrating to AddUserIdToEvents (20111208083015)
+Migrating to CreateAuthentications (20111208112903)
+Migrating to AddUserIdAndProviderAndUidAndTokenAndSecretToAuthentication (20111208113220)
+Migrating to CreateUsers (20111208115609)
+  [1m[35mSQL (145.4ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (58.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20111208115609')[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `authentications`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `authentications`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `events`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `events`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `users`
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 17:27:02 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 180ms (Views: 7.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-08 17:27:06 +0530
+
+
+Started GET "/auth/google/callback?oauth_verifier=2zMW08sHDb4j2h7gv50rp5-k&oauth_token=4%2FSZVj0busFAC_B8LMGXI5c0yyNKLt" for 127.0.0.1 at 2011-12-08 17:27:10 +0530
+
+ActionController::RoutingError (uninitialized constant AuthenticationsController):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateEvents (20111208063917)
+Migrating to CreateUsers (20111208115609)
+Migrating to AddProviderAndUidAndTokenAndSecretToUser (20111208122534)
+  [1m[35mSQL (290.4ms)[0m  ALTER TABLE `users` ADD `provider` varchar(255)
+  [1m[36mSQL (279.9ms)[0m  [1mALTER TABLE `users` ADD `uid` varchar(255)[0m
+  [1m[35mSQL (279.5ms)[0m  ALTER TABLE `users` ADD `token` varchar(255)
+  [1m[36mSQL (246.4ms)[0m  [1mALTER TABLE `users` ADD `secret` varchar(255)[0m
+  [1m[35mSQL (48.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20111208122534')
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  describe `events`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `events`[0m
+  [1m[35mSQL (0.4ms)[0m  describe `users`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `users`[0m
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 18:01:28 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 146ms (Views: 7.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-08 18:01:34 +0530
+
+ActionController::RoutingError (No route matches "/auth/google"):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateEvents (20111208063917)
+Migrating to CreateUsers (20111208115609)
+Migrating to AddProviderAndUidAndTokenAndSecretToUser (20111208122534)
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `events`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `events`
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `users`
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 18:02:47 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 145ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-12-08 18:02:50 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=6izf2c3JYFhOzjC4nrJo4laP8iqhJlt9wxhWtlii9U&oauth_verifier=5A2GalmauMVziqQtry1Gs8fUhV45odY0dD94Tm3Ug" for 127.0.0.1 at 2011-12-08 18:02:52 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"6izf2c3JYFhOzjC4nrJo4laP8iqhJlt9wxhWtlii9U", "oauth_verifier"=>"5A2GalmauMVziqQtry1Gs8fUhV45odY0dD94Tm3Ug", "provider"=>"twitter"}
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '320841060' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `users`[0m
+  [1m[35mAREL (14.4ms)[0m  INSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `provider`, `uid`, `token`, `secret`) VALUES ('Rajeswari', NULL, '2011-12-08 12:32:56', '2011-12-08 12:32:56', 'twitter', '320841060', NULL, NULL)
+  [1m[36mSQL (74.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 206ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 18:02:56 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (104.8ms)
+Completed   in 119ms
+
+ActionView::Template::Error (undefined local variable or method `logout_path' for #<#<Class:0x9317be0>:0x9311f10>):
+    12:     <strong>OmniAuth UID:</strong>
+    13:     <%= current_user.uid %>
+    14:   </p>
+    15:   <p><%= link_to "Log out", logout_path %></p>
+    16: <% end %>  
+    17: <h1>Listing events</h1>
+    18: 
+  app/views/events/index.html.erb:15:in `_app_views_events_index_html_erb__443439225_77102950__986348810'
+  app/controllers/events_controller.rb:7:in `index'
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 18:03:17 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (22.7ms)
+Completed   in 36ms
+
+ActionView::Template::Error (No route matches {:controller=>"sessions", :action=>"destroy"}):
+    11:       <div id="user_nav">
+    12:         <% if current_user %>
+    13:           Welcome <%= current_user.name %>!
+    14:           <%= link_to "Sign Out", signout_path %>
+    15:         <% else %>
+    16:           <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+    17:           <%= link_to "Sign in with Google", "/auth/google" %>
+  app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___215821292__617297948__986348810'
+  app/controllers/events_controller.rb:7:in `index'
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.7ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (54.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 18:03:58 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 167ms (Views: 29.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2011-12-08 18:04:08 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 18:04:08 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 20ms (Views: 8.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-08 18:04:11 +0530
+
+ActionController::RoutingError (No route matches "/auth/google"):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` LIMIT 1
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 18:07:18 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 17ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-12-08 18:07:20 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=3Wk3k9Tqcf3WINGF4mCFbKk94hmjwUX4yU44jgcbz8&oauth_verifier=kOpHZDLfc3wbERmyytBGNQMuyGDfCkluVe1L1SM0U" for 127.0.0.1 at 2011-12-08 18:07:22 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"3Wk3k9Tqcf3WINGF4mCFbKk94hmjwUX4yU44jgcbz8", "oauth_verifier"=>"kOpHZDLfc3wbERmyytBGNQMuyGDfCkluVe1L1SM0U", "provider"=>"twitter"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '320841060' AND `users`.`token` = '320841060-66D1qhr9gDGByEWV9abdPop9U9bfpVzPscFTUx0' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  describe `users`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `provider`, `uid`, `token`, `secret`) VALUES ('Rajeswari', NULL, '2011-12-08 12:37:24', '2011-12-08 12:37:24', 'twitter', '320841060', '320841060-66D1qhr9gDGByEWV9abdPop9U9bfpVzPscFTUx0', 'Vsiz8oiFzppW8CbQojpDGcVwlYi0ps3oALL9AWIvZvQ')[0m
+  [1m[35mSQL (66.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 180ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 18:07:24 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered events/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 37ms (Views: 26.0ms | ActiveRecord: 68.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` LIMIT 1[0m
+  [1m[35mUser Load (13.6ms)[0m  SELECT `users`.* FROM `users` ORDER BY users.id DESC LIMIT 1
+
+
+Started GET "/signout" for 127.0.0.1 at 2011-12-08 18:07:54 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-08 18:07:54 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 19ms (Views: 8.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-08 18:08:05 +0530
+
+ActionController::RoutingError (No route matches "/auth/google"):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 10:20:25 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 262ms (Views: 32.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-09 10:20:30 +0530
+
+ActionController::RoutingError (No route matches "/auth/google"):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (36.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 11:47:22 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 142ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-12-09 11:47:24 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=l0nawDHOAf74UJWnTmDpUv2OcCYfQPhjlNd7ap1SI&oauth_verifier=qVVVfYMz1b4onppHcxJQAx5FvDAOfSlQVATkmM" for 127.0.0.1 at 2011-12-09 11:47:34 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"l0nawDHOAf74UJWnTmDpUv2OcCYfQPhjlNd7ap1SI", "oauth_verifier"=>"qVVVfYMz1b4onppHcxJQAx5FvDAOfSlQVATkmM", "provider"=>"twitter"}
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '320841060' AND `users`.`token` = '320841060-66D1qhr9gDGByEWV9abdPop9U9bfpVzPscFTUx0' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 134ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 11:47:37 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 84ms (Views: 29.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2011-12-09 11:47:39 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 11:47:39 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 18ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2011-12-09 11:47:41 +0530
+
+ActionController::RoutingError (No route matches "/auth/google"):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 12:39:08 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 17ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 12:40:27 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 142ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2011-12-09 12:40:30 +0530
+
+
+Started GET "/auth/facebook/callback?code=AQB732vSrIPkOQnl99D2v5QUZEp7Mn21bt0fFzXT4ufcjEoeEOIO1D2EDhAXgf00y5BfpkHb0hnGUsyjr1SOE330DmNAXXkj2aEk4VSCCNFuKlBKzMrRHCiWCi4ZKrfadeeKKDs4ejSoeGO1-ZcPpPkgwVbmUUAYTzQ1n397Y59EEbso-1qPbQSgR5-KVgiPDD8" for 127.0.0.1 at 2011-12-09 12:42:11 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQB732vSrIPkOQnl99D2v5QUZEp7Mn21bt0fFzXT4ufcjEoeEOIO1D2EDhAXgf00y5BfpkHb0hnGUsyjr1SOE330DmNAXXkj2aEk4VSCCNFuKlBKzMrRHCiWCi4ZKrfadeeKKDs4ejSoeGO1-ZcPpPkgwVbmUUAYTzQ1n397Y59EEbso-1qPbQSgR5-KVgiPDD8", "provider"=>"facebook"}
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'facebook' AND `users`.`uid` = '100003239436215' AND `users`.`token` = 'AAADAVKRCTxEBAKFS0IQPirwzCXEFvLmf7cvwF3fyiqaPQtvdLBkZBTjRvuRur9FpTZCslNJj58R2ZA0xZBef8dVC5iCLhXHsZCisgKW3qqQZDZD' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `users`[0m
+  [1m[35mAREL (0.8ms)[0m  INSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `provider`, `uid`, `token`, `secret`) VALUES ('Rajeswari Spritle', NULL, '2011-12-09 07:12:14', '2011-12-09 07:12:14', 'facebook', '100003239436215', 'AAADAVKRCTxEBAKFS0IQPirwzCXEFvLmf7cvwF3fyiqaPQtvdLBkZBTjRvuRur9FpTZCslNJj58R2ZA0xZBef8dVC5iCLhXHsZCisgKW3qqQZDZD', NULL)
+  [1m[36mSQL (63.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 244ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 12:42:14 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 38ms (Views: 27.2ms | ActiveRecord: 66.4ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2011-12-09 12:42:43 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 12:42:43 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 19ms (Views: 7.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 12:50:11 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 144ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 12:50:29 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 17ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/foursquare" for 127.0.0.1 at 2011-12-09 12:50:30 +0530
+
+
+Started GET "/auth/foursquare/callback?code=0ZWYRFJU2KMLPEI0VA2FSTUH5FUO2FSGXPU4LSJOUKOI2WWD" for 127.0.0.1 at 2011-12-09 12:50:38 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"0ZWYRFJU2KMLPEI0VA2FSTUH5FUO2FSGXPU4LSJOUKOI2WWD", "provider"=>"foursquare"}
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'foursquare' AND `users`.`uid` = '17441160' AND `users`.`token` = 'U3SQERL2KJSONAR3ADP0TVBPREUKOWMMTI24O5NBTQP0R4LT' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  describe `users`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `provider`, `uid`, `token`, `secret`) VALUES (NULL, NULL, '2011-12-09 07:20:49', '2011-12-09 07:20:49', 'foursquare', '17441160', 'U3SQERL2KJSONAR3ADP0TVBPREUKOWMMTI24O5NBTQP0R4LT', NULL)[0m
+  [1m[35mSQL (82.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 196ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 12:50:50 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+Rendered events/index.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 41ms (Views: 26.7ms | ActiveRecord: 84.6ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2011-12-09 12:50:56 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 12:50:56 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 20ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:11:07 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 263ms (Views: 44.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:16:55 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (65.6ms)
+Completed   in 238ms
+
+ActionView::Template::Error (undefined local variable or method `new_identity_path' for #<#<Class:0xa4db1c4>:0xa4d9dec>):
+    19:           <%= link_to "Sign in with Foursquare", "/auth/foursquare" %>
+    20:           <p>
+    21: 		  <strong>Don't use these services?</strong>
+    22: 		  <%= link_to "Create an account", new_identity_path %> or login below.
+    23: 		</p>
+    24: 
+    25:         <% end %>
+  app/views/layouts/application.html.erb:22:in `_app_views_layouts_application_html_erb___535997688_85700550__456359723'
+  app/controllers/events_controller.rb:7:in `index'
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (35.6ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (43.3ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateEvents (20111208063917)
+Migrating to CreateUsers (20111208115609)
+Migrating to AddProviderAndUidAndTokenAndSecretToUser (20111208122534)
+Migrating to CreateIdentities (20111209084714)
+  [1m[35mSQL (146.7ms)[0m  CREATE TABLE `identities` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `password_digest` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (56.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20111209084714')[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `events`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `events`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `identities`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `identities`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `users`
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:18:09 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 178ms (Views: 7.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/identities/new" for 127.0.0.1 at 2011-12-09 14:18:14 +0530
+
+ActionController::RoutingError (uninitialized constant IdentitiesController):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/identities/new" for 127.0.0.1 at 2011-12-09 14:19:26 +0530
+
+AbstractController::ActionNotFound (The action 'new' could not be found for IdentitiesController):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:19:30 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 195ms (Views: 7.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:23:26 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 17ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/identity/register" for 127.0.0.1 at 2011-12-09 14:23:28 +0530
+
+
+Started POST "/auth/identity/register" for 127.0.0.1 at 2011-12-09 14:23:48 +0530
+
+LoadError (no such file to load -- bcrypt):
+  app/models/identity.rb:1:in `<top (required)>'
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.4ms)
+
+
+Started GET "/auth/identity/register" for 127.0.0.1 at 2011-12-09 14:26:02 +0530
+
+
+Started POST "/auth/identity/register" for 127.0.0.1 at 2011-12-09 14:26:37 +0530
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `identities`[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `identities` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Rajeswari', 'rajw@mail.com', '$2a$10$tczqlIpL2rf1SgD1p/r8/OL4CRlsbzFiTRK8GvBE9.Ys9ee2O7QT2', '2011-12-09 08:56:37', '2011-12-09 08:56:37')
+  [1m[36mSQL (64.2ms)[0m  [1mCOMMIT[0m
+  Processing by SessionsController#create as HTML
+  Parameters: {"name"=>"Rajeswari", "email"=>"rajw@mail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "provider"=>"identity"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'identity' AND `users`.`uid` = '1' AND `users`.`token` IS NULL LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  describe `users`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `provider`, `uid`, `token`, `secret`) VALUES ('Rajeswari', NULL, '2011-12-09 08:56:37', '2011-12-09 08:56:37', 'identity', '1', NULL, NULL)[0m
+  [1m[35mSQL (59.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 188ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:26:37 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1
+Rendered events/index.html.erb within layouts/application (59.3ms)
+Completed 200 OK in 84ms (Views: 63.3ms | ActiveRecord: 127.4ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2011-12-09 14:28:03 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:28:03 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 17ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/identity" for 127.0.0.1 at 2011-12-09 14:28:05 +0530
+
+
+Started POST "/auth/identity/callback" for 127.0.0.1 at 2011-12-09 14:28:09 +0530
+  [1m[35mIdentity Load (0.3ms)[0m  SELECT `identities`.* FROM `identities` WHERE `identities`.`email` = 'rajw@mail.com' LIMIT 1
+  Processing by SessionsController#create as HTML
+  Parameters: {"auth_key"=>"rajw@mail.com", "password"=>"[FILTERED]", "provider"=>"identity"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'identity' AND `users`.`uid` = '1' AND `users`.`token` IS NULL LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:28:09 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 81ms (Views: 28.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2011-12-09 14:28:12 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:28:12 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 18ms (Views: 8.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/identity/register" for 127.0.0.1 at 2011-12-09 14:28:13 +0530
+
+
+Started POST "/auth/identity/register" for 127.0.0.1 at 2011-12-09 14:28:20 +0530
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM `identities` WHERE (`identities`.`email` = BINARY '') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+
+
+Started POST "/auth/identity/register" for 127.0.0.1 at 2011-12-09 14:28:22 +0530
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT 1 FROM `identities` WHERE (`identities`.`email` = BINARY 'rajw@mail.com') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+
+
+Started POST "/auth/identity/register" for 127.0.0.1 at 2011-12-09 14:28:23 +0530
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM `identities` WHERE (`identities`.`email` = BINARY 'rajw@mail.com') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+
+
+Started POST "/auth/identity/register" for 127.0.0.1 at 2011-12-09 14:28:25 +0530
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM `identities` WHERE (`identities`.`email` = BINARY 'rajw@mail.com') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+
+
+Started POST "/auth/identity/register" for 127.0.0.1 at 2011-12-09 14:28:28 +0530
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM `identities` WHERE (`identities`.`email` = BINARY 'rajw@mail.com') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+
+
+Started POST "/auth/identity/register" for 127.0.0.1 at 2011-12-09 14:28:31 +0530
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM `identities` WHERE (`identities`.`email` = BINARY 'rajw@mail.com') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:28:44 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 25ms (Views: 7.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:38:22 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 64ms (Views: 7.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_apps" for 127.0.0.1 at 2011-12-09 14:38:24 +0530
+
+ActionController::RoutingError (No route matches "/auth/google_apps"):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:39:35 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 17ms (Views: 7.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2011-12-09 14:39:37 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:41:40 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 17ms (Views: 7.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2011-12-09 14:41:42 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:43:26 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 56ms (Views: 8.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2011-12-09 14:43:31 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:44:45 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 22ms (Views: 8.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:46:52 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 17ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:47:13 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 180ms (Views: 7.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2011-12-09 14:47:17 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:49:05 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 20ms (Views: 8.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2011-12-09 14:49:07 +0530
+
+
+Started GET "/auth/google_oauth2/callback?code=4/wWwGRH7COCJGVF7ADGeAd5TZOURj" for 127.0.0.1 at 2011-12-09 14:49:19 +0530
+
+
+Started GET "/auth/failure?message=invalid_credentials" for 127.0.0.1 at 2011-12-09 14:49:21 +0530
+  Processing by SessionsController#failure as HTML
+  Parameters: {"message"=>"invalid_credentials"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:49:21 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 18ms (Views: 7.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2011-12-09 14:50:17 +0530
+
+
+Started GET "/auth/google_oauth2/callback?code=kAcAH%2B1Ng28DNVqnqF3mUJJHdtWCKzJW%2BCq0DGvqm742ODUQQgDGUiDJ5nwPQc6A5/Hbz3aSvsB0xSJWXyUfS4IM5CcQwe/M6Cfkcc3inze1DWWtF/Sg5/nmCU%3D" for 127.0.0.1 at 2011-12-09 14:50:17 +0530
+
+
+Started GET "/auth/failure?message=invalid_credentials" for 127.0.0.1 at 2011-12-09 14:50:18 +0530
+  Processing by SessionsController#failure as HTML
+  Parameters: {"message"=>"invalid_credentials"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:50:18 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 18ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2011-12-09 14:50:20 +0530
+
+
+Started GET "/auth/google_oauth2/callback?code=kAcAH%2B1Ng2rSXf/jT9/MqArJvEnfWg1Pkc1DEPex9iOrfXQEsEwqSXqd/AMKLiQeY%2BwHWSEy42ylkblP7OT3zlVXZJ/9s6NBWzqbE0%2B8zIlWPmjrrMqdcAP/Qs%3D" for 127.0.0.1 at 2011-12-09 14:50:21 +0530
+
+
+Started GET "/auth/failure?message=invalid_credentials" for 127.0.0.1 at 2011-12-09 14:50:22 +0530
+  Processing by SessionsController#failure as HTML
+  Parameters: {"message"=>"invalid_credentials"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:50:22 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 17ms (Views: 7.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2011-12-09 14:52:41 +0530
+
+
+Started GET "/auth/google_oauth2/callback?code=kAcAH%2B1Ng2AuHcqmmcydsvZu57yKPQcqb8yyR2Apu6ZCaovAutZhOMGF3EeVK3n9FfDAHNj/HRxQSELxOc6YWHDFR88DsgwbyYnYYXRwunm%2Bfb3XJBDEMXrmFo%3D" for 127.0.0.1 at 2011-12-09 14:52:48 +0530
+
+
+Started GET "/auth/failure?message=invalid_credentials" for 127.0.0.1 at 2011-12-09 14:52:50 +0530
+  Processing by SessionsController#failure as HTML
+  Parameters: {"message"=>"invalid_credentials"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:52:50 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 17ms (Views: 7.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:54:31 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 17ms (Views: 7.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2011-12-09 14:54:33 +0530
+
+
+Started GET "/auth/google_oauth2/callback?code=kAcAH%2B1Ng2v23tagNNbpoGS2Wc%2BoN9g/YKwaNRl%2BsQLfC7ZV0THhH1BCIB3QQAgVILCuMnqqgTHeVkvFysEz/kUgn7W3jZON4yZxXV3R0KgJ7lNvecoBZFdymA%3D" for 127.0.0.1 at 2011-12-09 14:59:00 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:59:02 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 19ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2011-12-09 14:59:03 +0530
+
+
+Started GET "/auth/google_oauth2/callback?code=kAcAH%2B1Ng07ASgycaVhOAdx7NWYhxqo3JSaKSVPDE0kg8bFZggN71toipDnz41zP8xSlLr61zYumuSj%2BgC%2BstGs13VJ3M4hxImVd4gxj71%2B4iU1Yqe9eCqp/w8%3D" for 127.0.0.1 at 2011-12-09 14:59:04 +0530
+
+
+Started GET "/auth/failure?message=invalid_credentials" for 127.0.0.1 at 2011-12-09 14:59:05 +0530
+  Processing by SessionsController#failure as HTML
+  Parameters: {"message"=>"invalid_credentials"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 14:59:05 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 18ms (Views: 7.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:00:00 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 19ms (Views: 8.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2011-12-09 15:00:02 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:00:28 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 18ms (Views: 7.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2011-12-09 15:00:30 +0530
+
+
+Started GET "/auth/google_oauth2/callback?code=kAcAH%2B1Ng26HMCfUDqIJIjEQf/Kse70MTT8sBybidlSySMtvhSUMPoUtH8XVfHo6U4MO/5zx1DHpDzbOBRxih8Vks6t1w4d0najPUZDvhH6xRIEn0ua0ubKKZY%3D" for 127.0.0.1 at 2011-12-09 15:00:37 +0530
+
+
+Started GET "/auth/failure?message=invalid_credentials" for 127.0.0.1 at 2011-12-09 15:00:38 +0530
+  Processing by SessionsController#failure as HTML
+  Parameters: {"message"=>"invalid_credentials"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:00:38 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 18ms (Views: 7.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_oauth2/callback?code=kAcAH%2B1Ng0DoxiJyp4jmbvCjG9MlSAHyqRLDXNNw%2BckcMEn3LV8rMb7IQzUXBj4Ynvl9EGapsbjXSpFs3doYHt4pvJzwwdSnlPn3vW35CWedAQwef1CLy95S9Q%3D" for 127.0.0.1 at 2011-12-09 15:00:41 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:00:44 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 17ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:00:55 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 55ms (Views: 7.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2011-12-09 15:01:04 +0530
+
+
+Started GET "/auth/google_oauth2/callback?code=4/JdiIw5VpvEXSN-fp0eHRUjxzNMk-" for 127.0.0.1 at 2011-12-09 15:02:10 +0530
+
+
+Started GET "/auth/failure?message=invalid_credentials" for 127.0.0.1 at 2011-12-09 15:02:11 +0530
+  Processing by SessionsController#failure as HTML
+  Parameters: {"message"=>"invalid_credentials"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:02:11 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 18ms (Views: 7.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:02:44 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 18ms (Views: 7.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:03:13 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 54ms (Views: 8.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:17:02 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 18ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2011-12-09 15:17:03 +0530
+
+
+Started GET "/auth/google_oauth2/callback?code=kAcAH%2B1Ng1opVbz6x4yYb6UHWIK9Yvvb5vkoJDCcYLM3aA%2BlTX70cRI/wECs8PYKN2sdWioPOYP5j07hkKvhOtmpJYOS8UGyMuYsh84YBjvdsReHKiaj5JD7Gw%3D" for 127.0.0.1 at 2011-12-09 15:17:04 +0530
+
+
+Started GET "/auth/failure?message=invalid_credentials" for 127.0.0.1 at 2011-12-09 15:17:05 +0530
+  Processing by SessionsController#failure as HTML
+  Parameters: {"message"=>"invalid_credentials"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:17:05 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 17ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:17:30 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 17ms (Views: 7.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2011-12-09 15:17:34 +0530
+
+
+Started GET "/auth/google_oauth2/callback?code=kAcAH%2B1Ng0aX6Gek7k3zQubzoQxTzsYh/LPEKQ4ciuUHBwwPShnRuHfytF7ERwotbit7IpMeqWDJVk0nxIHvvUsutd95k7ho1BaSEafpwCfNBG1p4NH2ieRPgk%3D" for 127.0.0.1 at 2011-12-09 15:17:42 +0530
+
+
+Started GET "/auth/failure?message=invalid_credentials" for 127.0.0.1 at 2011-12-09 15:17:43 +0530
+  Processing by SessionsController#failure as HTML
+  Parameters: {"message"=>"invalid_credentials"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:17:43 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 17ms (Views: 7.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:18:31 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 18ms (Views: 7.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:18:39 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 57ms (Views: 7.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2011-12-09 15:18:40 +0530
+
+
+Started GET "/auth/google_oauth2/callback?code=kAcAH%2B1Ng3zKdhO0byVIHfgKfscn/RXPtphAeJediEacEAzmrY/Bqwzp9bpMf6rowPn9eZlBWMgK9w1%2BBmpwWejz5z3jGVOFUWlXhYaWv5l%2BgJgD3FUSC%2Bt/7M%3D" for 127.0.0.1 at 2011-12-09 15:18:55 +0530
+
+
+Started GET "/auth/failure?message=invalid_credentials" for 127.0.0.1 at 2011-12-09 15:18:57 +0530
+  Processing by SessionsController#failure as HTML
+  Parameters: {"message"=>"invalid_credentials"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:18:57 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 18ms (Views: 7.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:19:13 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 17ms (Views: 7.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:26:20 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 155ms (Views: 8.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2011-12-09 15:26:24 +0530
+
+
+Started GET "/auth/google_oauth2/callback?code=4/GnLaJ59asVrSBhhx5k6ln08PkdBW" for 127.0.0.1 at 2011-12-09 15:26:36 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"4/GnLaJ59asVrSBhhx5k6ln08PkdBW", "provider"=>"google_oauth2"}
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'google_oauth2' AND `users`.`uid` = '109029571982285183856' AND `users`.`token` = 'ya29.AHES6ZSFCaLwcxecwtPcfioIafykzxauPH6ARpgT71w7QdxUO2o6XA' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `users`[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `provider`, `uid`, `token`, `secret`) VALUES ('Rajeswari Krishnamoorthy', NULL, '2011-12-09 09:56:38', '2011-12-09 09:56:38', 'google_oauth2', '109029571982285183856', 'ya29.AHES6ZSFCaLwcxecwtPcfioIafykzxauPH6ARpgT71w7QdxUO2o6XA', NULL)
+  [1m[36mSQL (40.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 152ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:26:39 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 6 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 40ms (Views: 27.5ms | ActiveRecord: 42.7ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2011-12-09 15:27:09 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:27:09 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 20ms (Views: 7.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:47:25 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 21ms (Views: 7.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2011-12-09 15:47:26 +0530
+
+
+Started GET "/auth/google_oauth2/callback?code=kAcAH%2B1Ng2GHvx1wAjnflRT7BgiP82t3xzBZAlw3ymFWoWkSJhvxhuzr6qtBkjTLVVutDrF%2BkCcNJb6W7VmpjMyf2C9oW0w4VvLxHutBUEhxG2Pmmqf0du2TuA%3D" for 127.0.0.1 at 2011-12-09 15:47:27 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"kAcAH+1Ng2GHvx1wAjnflRT7BgiP82t3xzBZAlw3ymFWoWkSJhvxhuzr6qtBkjTLVVutDrF+kCcNJb6W7VmpjMyf2C9oW0w4VvLxHutBUEhxG2Pmmqf0du2TuA=", "provider"=>"google_oauth2"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'google_oauth2' AND `users`.`uid` = '109029571982285183856' AND `users`.`token` = 'ya29.AHES6ZS56JtHdS9FVnnKM3eyzMwlC1cTi8GT6ijNWMf74TuFCo_RXA' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  describe `users`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `provider`, `uid`, `token`, `secret`) VALUES ('Rajeswari Krishnamoorthy', NULL, '2011-12-09 10:17:29', '2011-12-09 10:17:29', 'google_oauth2', '109029571982285183856', 'ya29.AHES6ZS56JtHdS9FVnnKM3eyzMwlC1cTi8GT6ijNWMf74TuFCo_RXA', NULL)[0m
+  [1m[35mSQL (39.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 61ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:47:29 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1
+Rendered events/index.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 81ms (Views: 27.3ms | ActiveRecord: 40.8ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2011-12-09 15:47:34 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:47:34 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 19ms (Views: 7.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2011-12-09 15:47:36 +0530
+
+
+Started GET "/auth/google_oauth2/callback?code=kAcAH%2B1Ng1QLAuuCvfqAiz%2BR7W2%2B4zfI3jZFZWsoPq4khfmHeIUdcqCfdXBMaAilIdwh5p9WUjGfLmsYmuIlt3eGm9/Uc2sXqJi610pNsPVwaXohOhF0ak0Bp0%3D" for 127.0.0.1 at 2011-12-09 15:47:36 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"kAcAH+1Ng1QLAuuCvfqAiz+R7W2+4zfI3jZFZWsoPq4khfmHeIUdcqCfdXBMaAilIdwh5p9WUjGfLmsYmuIlt3eGm9/Uc2sXqJi610pNsPVwaXohOhF0ak0Bp0=", "provider"=>"google_oauth2"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'google_oauth2' AND `users`.`uid` = '109029571982285183856' AND `users`.`token` = 'ya29.AHES6ZQtZtssSweuYaleCzohBmTiinEb-61NIuco6gYwq3V1e9BNuA' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  describe `users`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `provider`, `uid`, `token`, `secret`) VALUES ('Rajeswari Krishnamoorthy', NULL, '2011-12-09 10:17:38', '2011-12-09 10:17:38', 'google_oauth2', '109029571982285183856', 'ya29.AHES6ZQtZtssSweuYaleCzohBmTiinEb-61NIuco6gYwq3V1e9BNuA', NULL)[0m
+  [1m[35mSQL (28.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 51ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:47:38 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 8 LIMIT 1
+Rendered events/index.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 39ms (Views: 27.4ms | ActiveRecord: 30.5ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2011-12-09 15:47:40 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:47:40 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 20ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:49:24 +0530
+
+ArgumentError (Received wrong number of arguments. [{:client_options=>{:ssl=>{:ca_path=>"/etc/ssl/certs"}}}]):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.5ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 15:52:40 +0530
+
+ArgumentError (Received wrong number of arguments. [{:client_options=>{:ssl=>{:ca_path=>"/etc/ssl/certs"}}}]):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.7ms)
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 16:00:25 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 149ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2011-12-09 16:00:28 +0530
+
+
+Started GET "/auth/google_oauth2/callback?code=4/ialxGxmRC9I0SmoRZQbN7jG5C4md" for 127.0.0.1 at 2011-12-09 16:00:42 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"4/ialxGxmRC9I0SmoRZQbN7jG5C4md", "provider"=>"google_oauth2"}
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'google_oauth2' AND `users`.`uid` = '112342793951163250943' AND `users`.`token` = 'ya29.AHES6ZTb2KFteLZjw8qLtxlTto8SoEHQz-3VlgJ0sZQ44A' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `users`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `provider`, `uid`, `token`, `secret`) VALUES ('Rajeswari K', NULL, '2011-12-09 10:30:44', '2011-12-09 10:30:44', 'google_oauth2', '112342793951163250943', 'ya29.AHES6ZTb2KFteLZjw8qLtxlTto8SoEHQz-3VlgJ0sZQ44A', NULL)
+  [1m[36mSQL (58.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 137ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 16:00:44 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 9 LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 38ms (Views: 26.8ms | ActiveRecord: 60.7ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2011-12-09 16:01:23 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 16:01:23 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 19ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-09 16:34:27 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 17ms (Views: 7.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-13 10:32:29 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 226ms (Views: 41.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recent_tweets" for 127.0.0.1 at 2011-12-13 10:32:41 +0530
+  Processing by EventsController#recent_tweets as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` LIMIT 1
+Completed   in 717ms
+
+ActionView::MissingTemplate (Missing template events/recent_tweets with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/home/rajeswari/projects/omniauthApp/app/views"):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-13 10:33:45 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 17ms (Views: 7.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-12-13 10:34:36 +0530
+
+
+Started GET "/" for 192.168.1.6 at 2011-12-13 10:41:52 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 16ms (Views: 7.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/new" for 192.168.1.6 at 2011-12-13 10:44:34 +0530
+  Processing by EventsController#new as HTML
+Rendered events/_form.html.erb (136.7ms)
+Rendered events/new.html.erb within layouts/application (140.5ms)
+Completed 200 OK in 155ms (Views: 144.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 192.168.1.6 at 2011-12-13 10:45:17 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=bP07XK8TUnSbkhZTT2kwmpSIBV3QUgdyToxi38Je86I&oauth_verifier=wmOFmjWoSTmVHbZxr7C2dFvl9aEJn5XGsWx6CNoek" for 192.168.1.6 at 2011-12-13 10:45:31 +0530
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"bP07XK8TUnSbkhZTT2kwmpSIBV3QUgdyToxi38Je86I", "oauth_verifier"=>"wmOFmjWoSTmVHbZxr7C2dFvl9aEJn5XGsWx6CNoek", "provider"=>"twitter"}
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'twitter' AND `users`.`uid` = '65608622' AND `users`.`token` = '65608622-XLFUfqexjcBiM5CmtMws8iBN2nFyJSKEJleIuHI' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  describe `users`
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `provider`, `uid`, `token`, `secret`) VALUES ('Spritle Software', NULL, '2011-12-13 05:15:36', '2011-12-13 05:15:36', 'twitter', '65608622', '65608622-XLFUfqexjcBiM5CmtMws8iBN2nFyJSKEJleIuHI', 'yTjJ7a2viNku1xCJ0cQI2p29gB0dkgREE2soYYQk')[0m
+  [1m[35mSQL (58.5ms)[0m  COMMIT
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 182ms
+
+
+Started GET "/" for 192.168.1.6 at 2011-12-13 10:45:41 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1
+Rendered events/index.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 35ms (Views: 25.5ms | ActiveRecord: 61.1ms)
+
+
+Started GET "/auth/twitter/callback?oauth_token=bP07XK8TUnSbkhZTT2kwmpSIBV3QUgdyToxi38Je86I&oauth_verifier=wmOFmjWoSTmVHbZxr7C2dFvl9aEJn5XGsWx6CNoek" for 192.168.1.6 at 2011-12-13 10:45:50 +0530
+
+
+Started GET "/auth/failure?message=invalid_credentials" for 192.168.1.6 at 2011-12-13 10:45:57 +0530
+  Processing by SessionsController#failure as HTML
+  Parameters: {"message"=>"invalid_credentials"}
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 192.168.1.6 at 2011-12-13 10:46:02 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1
+Rendered events/index.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 35ms (Views: 25.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 192.168.1.6 at 2011-12-13 10:46:12 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1
+Rendered events/index.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 35ms (Views: 25.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 192.168.1.6 at 2011-12-13 10:46:18 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1
+Rendered events/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 74ms (Views: 25.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 192.168.1.6 at 2011-12-13 10:46:29 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1
+Rendered events/index.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 35ms (Views: 25.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 192.168.1.6 at 2011-12-13 10:46:49 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1
+Rendered events/index.html.erb within layouts/application (60.8ms)
+Completed 200 OK in 74ms (Views: 64.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signout" for 192.168.1.6 at 2011-12-13 10:46:56 +0530
+  Processing by SessionsController#destroy as HTML
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 192.168.1.6 at 2011-12-13 10:47:01 +0530
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+Rendered events/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 16ms (Views: 7.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_oauth2" for 192.168.1.6 at 2011-12-13 10:47:21 +0530
+
+
+Started GET "/auth/foursquare" for 192.168.1.6 at 2011-12-13 10:47:33 +0530
+
+
+Started GET "/auth/foursquare/callback?error=redirect_uri_mismatch" for 192.168.1.6 at 2011-12-13 10:47:40 +0530
+
+
+Started GET "/auth/failure?message=invalid_credentials" for 192.168.1.6 at 2011-12-13 10:47:45 +0530
+  Processing by SessionsController#failure as HTML
+  Parameters: {"message"=>"invalid_credentials"}
+Redirected to http://192.168.1.9:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 192.168.1.6 at 2011-12-13 10:47:50 +0530
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+Rendered events/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 16ms (Views: 7.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recent_tweets" for 192.168.1.6 at 2011-12-13 10:47:55 +0530
+  Processing by EventsController#recent_tweets as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` LIMIT 1[0m
+Completed   in 666ms
+
+ActionView::MissingTemplate (Missing template events/recent_tweets with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/home/rajeswari/projects/omniauthApp/app/views"):
+  
+
+Rendered /home/rajeswari/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.8ms)
