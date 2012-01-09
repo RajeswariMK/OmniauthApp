@@ -84,7 +84,7 @@ class EventsController < ApplicationController
   def recent_tweets
     
     def prepare_access_token(oauth_token, oauth_token_secret)
-            consumer = OAuth::Consumer.new("eSlzAxHbI7xaAwqFnDEQ", "iBoK1FHJPRwO8ctx23M6K9N37zQ3hWnI9lTbS2y4",
+            consumer = OAuth::Consumer.new("xxxxx", "xxxxxx",
                { :site => "http://api.twitter.com" })
             # now create the access token object from passed values
             token_hash = { :oauth_token => oauth_token,
